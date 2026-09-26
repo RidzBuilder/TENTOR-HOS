@@ -37,6 +37,6 @@
 
 ## Immediate next action
 
-1. Resolve the open package-identity/count discrepancy recorded in `docs/evidence/SOURCE_INTAKE_DISCREPANCY_EXTRACTION_NOTE_vs_ATTACHED_ZIP_v0.1.md`: the supplied extraction note claims 128 ZIP entries while the attached archive accounting records 78 file entries. Establish whether the note refers to a different archive revision or counting convention; do not harmonize without evidence.
+1. Count convention reconciled: the attached archive contains 128 total ZIP entries (78 files + 50 explicit directory entries), and its SHA-256 matches the extraction note. See the updated discrepancy note and deterministic reconciliation report.
 2. Begin source-by-source semantic review of the 61 registry entries. Capture source-supported summary, provenance/commit where available, exact historical status and context, limitations, duplicate/overlap relations, conflicts, and acceptance rationale. Keep unknowns explicitly UNKNOWN/PENDING.
 3. Update the registry and reconciliation report in small traceable batches. Only after source review and conflict reconciliation may synthesis and architecture decision gates begin.
