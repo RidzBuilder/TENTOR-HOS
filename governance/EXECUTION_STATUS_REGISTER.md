@@ -23,7 +23,7 @@
 | S00-01 | Inspect repository baseline and preserve existing README | PASS | Repository is a clean bootstrap target with existing README; branch created from recorded main checkpoint. |
 | S00-02 | Validate supplied ZIP integrity | PASS | Archive opens and integrity checks completed; captured-file manifest 76/76 and checksum list 77/77 match. |
 | S00-03 | Reconcile archive accounting | PASS — structural only | 78 archive file entries classified; 61 project artifacts reconcile as 20 primary evidence + 41 repository snapshots; 17 support entries separately classified. See deterministic reconciliation report. |
-| S00-04 | Establish Evidence Registry intake scaffold for 61 project artifacts | COMPLETE — intake only | `docs/evidence/EVIDENCE_REGISTRY_v0.1.md` contains 61 stable intake IDs with exact archive paths, provisional classes, bundle integrity reference, and pending review states. This is not semantic acceptance. |
+| S00-04 | Establish Evidence Registry intake scaffold for 61 project artifacts | COMPLETE — intake only | `docs/evidence/EVIDENCE_REGISTRY_v0.1.md` contains 61 stable intake IDs. TH-EV-001 and TH-EV-002 content reviewed in THOS-REV-ACS-001; acceptance remains pending. This is not semantic acceptance. |
 | S00-05 | Source-by-source evidence synthesis | BLOCKED by S00-04 | Do not synthesize canonical architecture until registry records and reconciliation are complete. |
 | S00-06 | TENTOR HOS V.2 fundamental specification | NOT STARTED | Depends on accepted synthesis and explicit architecture decision gates. |
 | S00-07 | Implementation baseline and conformance | NOT STARTED | Depends on approved specification and implementation contract. |
@@ -31,12 +31,12 @@
 
 ## Current gate
 
-**STEP 00 structural integrity/accounting:** PASS.  
+**STEP 00 structural integrity/accounting:** PASS (128 ZIP entries = 78 files + 50 explicit directories; archive SHA-256 matches extraction note).  
 **STEP 00 Evidence Registry intake scaffold:** COMPLETE. **Semantic source review and acceptance:** OPEN.  
 **Overall TENTOR HOS V.2:** IN PROGRESS — no overall PASS claim.
 
 ## Immediate next action
 
 1. Count convention reconciled: the attached archive contains 128 total ZIP entries (78 files + 50 explicit directory entries), and its SHA-256 matches the extraction note. See the updated discrepancy note and deterministic reconciliation report.
-2. Begin source-by-source semantic review of the 61 registry entries. Capture source-supported summary, provenance/commit where available, exact historical status and context, limitations, duplicate/overlap relations, conflicts, and acceptance rationale. Keep unknowns explicitly UNKNOWN/PENDING.
-3. Update the registry and reconciliation report in small traceable batches. Only after source review and conflict reconciliation may synthesis and architecture decision gates begin.
+2. Continue source-by-source semantic review; Batch 01 reviewed TH-EV-001 and TH-EV-002 (2/61 project-artifact entries) with acceptance still pending. Next review remaining ACS captured evidence and ACS GitHub snapshots, then proceed by source-project batches.
+3. Update the registry and review records in small traceable batches. Only after source review and conflict reconciliation may synthesis and architecture decision gates begin.
