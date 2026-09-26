@@ -19,7 +19,7 @@
 
 | Evidence ID | Exact archive path | Source project | Provisional artifact class | Integrity reference | Historical status | Acceptance |
 |---|---|---|---|---|---|---|
-| TH-EV-001 | `01_EVIDENCE/ACS/source/00_Affiliate_AI_Content_Studio_Artifact_Index.txt` | ACS | Captured evidence artifact | See bundle manifest/checksum; verified at bundle level | Pending source review | Pending |
+| TH-EV-001 | `01_EVIDENCE/ACS/source/00_Affiliate_AI_Content_Studio_Artifact_Index.txt` | ACS | Captured evidence artifact | See bundle manifest/checksum; verified at bundle level | Content reviewed; historical source status recorded in review batch | Acceptance pending; see THOS-REV-ACS-001 |
 | TH-EV-002 | `01_EVIDENCE/ACS/source/Affiliate_AI_Content_Studio_Purified_Blueprint_Google_AI_Studio_2026-09-07.txt` | ACS | Captured evidence artifact | See bundle manifest/checksum; verified at bundle level | Pending source review | Pending |
 | TH-EV-003 | `01_EVIDENCE/ACS/validation/ACS_V3_MAIN_CHAT_EVIDENCE_INGESTION_HANDOFF_INSTRUCTION_v1.0.txt` | ACS | Captured evidence artifact | See bundle manifest/checksum; verified at bundle level | Pending source review | Pending |
 | TH-EV-004 | `01_EVIDENCE/ACS/validation/ACS_V3_EVIDENCE_INGESTION_AND_MAIN_STATE_AUDIT_v1.0.txt` | ACS | Captured evidence artifact | See bundle manifest/checksum; verified at bundle level | Pending source review | Pending |
