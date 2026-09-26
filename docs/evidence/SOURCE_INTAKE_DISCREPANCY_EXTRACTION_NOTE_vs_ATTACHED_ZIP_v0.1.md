@@ -1,38 +1,36 @@
 # Source Intake Discrepancy — Extraction Note vs. Attached Baseline ZIP
 
 **Record ID:** THOS-REC-002  
-**Version:** 0.1  
+**Version:** 0.2  
 **Date:** 2026-09-26  
-**Status:** OPEN — source-package identity/revision reconciliation required  
-**Scope:** Compare the user-provided text file `Ekstrak Evidence Project.txt` with the attached `UNIVERSE_TENTOR_HOS_EVIDENCE_BASELINE_v1.0.zip`. This is a reconciliation note, not a judgment that either source is invalid.
+**Status:** RESOLVED — count convention reconciled; source semantic review remains open  
+**Scope:** Compare the user-provided text file `Ekstrak Evidence Project.txt` with the attached `UNIVERSE_TENTOR_HOS_EVIDENCE_BASELINE_v1.0.zip`.
 
-## Source A — extraction note (user-provided text)
+## Source A — extraction note
 
-The text states:
-- 76 captured evidence files;
-- 7 binary Library artifacts marked source-reference-only;
-- total 128 ZIP entries;
-- final ZIP SHA-256 `f4d6bc2999c33d97d3c6673c27517c8123d646548c1718c53886af6bde1d845c`.
+The user-provided text states 76 captured evidence files, 7 binary Library artifacts marked source-reference-only, 128 ZIP entries, and SHA-256 `f4d6bc2999c33d97d3c6673c27517c8123d646548c1718c53886af6bde1d845c`.
 
-These are recorded as claims in the text artifact, not independently accepted solely by being written there.
+## Source B — direct archive inspection
 
-## Source B — attached ZIP and repository reconciliation records
+The currently attached ZIP's SHA-256 matches the digest stated in the extraction note. Direct listing with `unzip -Z -1` and counting archive paths by trailing slash establishes:
+- 78 non-directory/file entries;
+- 50 explicit directory entries;
+- 128 total ZIP entries when both files and directories are counted.
 
-The currently attached ZIP was directly inspected and its recorded SHA-256 matches the digest above. The existing bundle audit records 78 ZIP file entries, 76 manifest-captured files, 77 checksum-list entries, and 7 source-only Library records. The bundle manifest and checksum records are independently represented in the bundle accounting.
+An extraction to the working directory yields 79 filesystem directories including the extracted top-level root, equivalent to 50 directories inside the archive plus that root directory.
 
-## Discrepancy
+## Reconciliation
 
-The extraction note's stated total of 128 ZIP entries differs from the current attached ZIP's recorded 78 file entries. The evidence does not yet establish whether this is due to a different archive revision, counting convention (e.g. directories as entries), or a stale extraction note. Do not silently harmonize 128 and 78.
+The values 128 and 78 refer to different counting populations, not conflicting archive revisions: 128 counts all ZIP entries (78 files + 50 directory entries), while 78 counts file entries only. The extraction note's count is consistent with the attached archive under the all-entry convention.
 
-## Required resolution
-
-1. Obtain or identify the exact archive revision that the extraction note describes, if distinct from the currently attached ZIP.
-2. Determine whether “128 ZIP entries” includes directory entries or a different count population; record the counting method.
-3. Compare the archive SHA-256 and manifest/checksum sets for each identified revision.
-4. Preserve both source claims and document the reconciliation result with exact archive identity and reproducible counts.
+This resolution applies only to entry-count semantics and archive identity. It does not change the manifest/checksum populations or certify the semantic content of the evidence.
 
 ## Disposition
 
-- Current attached ZIP integrity: use the independently recorded integrity result in `EVIDENCE_CORPUS_RECONCILIATION_INITIAL_FINDINGS_v0.1.md`.
-- Extraction-note claim of 128 entries: OPEN / not reconciled.
-- No impact is asserted on the 76 manifest-listed files' byte integrity; no semantic or architectural acceptance is implied.
+- Archive identity by SHA-256: MATCH.
+- ZIP entry count: 128 total = 78 files + 50 explicit directories.
+- Captured-file manifest: 76 entries; independently checked against path, size, SHA-256.
+- Checksum list: 77 entries; independently checked against path and SHA-256.
+- Count-convention discrepancy: RESOLVED.
+- Evidence semantic review and acceptance: OPEN.
+- No canonical architecture or implementation acceptance is implied.
