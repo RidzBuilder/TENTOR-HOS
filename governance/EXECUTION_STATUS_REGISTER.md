@@ -1,7 +1,7 @@
 # TENTOR HOS V.2 — Execution Status Register
 
 **Register version:** 0.1  
-**As of:** 2026-09-26  
+**As of:** 2026-09-27  
 **Repository:** `RidzBuilder/TENTOR-HOS`  
 **Execution branch:** `bootstrap/step-00-baseline-recovery`  
 **Pull request:** [#1](https://github.com/RidzBuilder/TENTOR-HOS/pull/1) — draft; not merged.
@@ -23,8 +23,8 @@
 | S00-01 | Inspect repository baseline and preserve existing README | PASS | Repository is a clean bootstrap target with existing README; branch created from recorded main checkpoint. |
 | S00-02 | Validate supplied ZIP integrity | PASS | Archive opens and integrity checks completed; captured-file manifest 76/76 and checksum list 77/77 match. |
 | S00-03 | Reconcile archive accounting | PASS — structural only | 78 archive file entries classified; 61 project artifacts reconcile as 20 primary evidence + 41 repository snapshots; 17 support entries separately classified. See deterministic reconciliation report. |
-| S00-04 | Establish Evidence Registry intake scaffold for 61 project artifacts | COMPLETE — intake only | `docs/evidence/EVIDENCE_REGISTRY_v0.1.md` contains 61 stable intake IDs. TH-EV-001 and TH-EV-002 content reviewed in THOS-REV-ACS-001; acceptance remains pending. This is not semantic acceptance. |
-| S00-05 | Source-by-source evidence synthesis | BLOCKED by S00-04 | Do not synthesize canonical architecture until registry records and reconciliation are complete. |
+| S00-04 | Establish Evidence Registry intake scaffold for 61 project artifacts | COMPLETE — intake only | Registry contains 61 stable IDs. TH-EV-001–004 content reviewed in THOS-REV-ACS-001 and THOS-REV-ACS-002; all acceptance remains pending. This is not semantic acceptance. |
+| S00-05 | Source-by-source evidence synthesis | IN PROGRESS — source review | ACS primary artifacts TH-EV-001–004 reviewed in two batches; ACS repository snapshots TH-EV-032–043 and other project sources remain pending. Cross-source reconciliation and acceptance are open. Do not synthesize canonical architecture yet. |
 | S00-06 | TENTOR HOS V.2 fundamental specification | NOT STARTED | Depends on accepted synthesis and explicit architecture decision gates. |
 | S00-07 | Implementation baseline and conformance | NOT STARTED | Depends on approved specification and implementation contract. |
 | S00-08 | Independent U-AAFA | NOT STARTED / GATED | Run only after spec and implementation are final and auditable. |
@@ -32,11 +32,11 @@
 ## Current gate
 
 **STEP 00 structural integrity/accounting:** PASS (128 ZIP entries = 78 files + 50 explicit directories; archive SHA-256 matches extraction note).  
-**STEP 00 Evidence Registry intake scaffold:** COMPLETE. **Semantic source review and acceptance:** OPEN.  
+**STEP 00 Evidence Registry intake scaffold:** COMPLETE. **Semantic source review:** IN PROGRESS (4/61 primary/repository project-artifact records content-reviewed; acceptance pending). **Cross-source reconciliation and acceptance:** OPEN.  
 **Overall TENTOR HOS V.2:** IN PROGRESS — no overall PASS claim.
 
-## Immediate next action
+## Latest completed execution — 2026-09-27\n\n- Reviewed TH-EV-003 and TH-EV-004 from the attached baseline and created `docs/evidence/reviews/THOS_EVIDENCE_REVIEW_BATCH_02_ACS_VALIDATION_AND_HANDOFF_v0.1.md`.\n- Updated TH-EV-001–004 registry review statuses; no acceptance promoted.\n- Preserved source distinctions: Account 1 historical ~15s/WEBM observations do not transfer; Account 2 HTTP 502 with no artifact remains failure evidence and GAP-ACS-004 OPEN; MP4 and long-duration capability remain unproven; ACS main state claims are time-bound to the 2026-09-22 source audit.\n- Batch 02 does not approve any TENTOR HOS invariant, architecture, or implementation.\n\n## Immediate next action
 
 1. Count convention reconciled: the attached archive contains 128 total ZIP entries (78 files + 50 explicit directory entries), and its SHA-256 matches the extraction note. See the updated discrepancy note and deterministic reconciliation report.
-2. Continue source-by-source semantic review; Batch 01 reviewed TH-EV-001 and TH-EV-002 (2/61 project-artifact entries) with acceptance still pending. Next review remaining ACS captured evidence and ACS GitHub snapshots, then proceed by source-project batches.
+2. Continue source-by-source semantic review; Batch 01 reviewed TH-EV-001–002; Batch 02 reviewed TH-EV-003–004. Four of 61 project-artifact records have content reviews, with acceptance still pending. Next review ACS GitHub snapshots TH-EV-032–043 in small traceable batches, compare with ACS primary evidence, then proceed by source-project batches.
 3. Update the registry and review records in small traceable batches. Only after source review and conflict reconciliation may synthesis and architecture decision gates begin.
