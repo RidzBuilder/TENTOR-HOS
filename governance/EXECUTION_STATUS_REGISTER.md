@@ -37,6 +37,6 @@
 
 ## Immediate next action
 
-Create the Evidence Registry from the verified archive inventory. For every captured evidence or repository snapshot, record at minimum: stable evidence ID, exact archive path, source project, source type, source reference/commit when available, hash, artifact date/version when stated, evidence class, historical status, duplicate/overlap relation, limitations, and current acceptance state. Unknown values must remain UNKNOWN rather than be inferred.
-
-The Evidence Registry must be reviewed and reconciled before proceeding to architecture synthesis.
+1. Resolve the open package-identity/count discrepancy recorded in `docs/evidence/SOURCE_INTAKE_DISCREPANCY_EXTRACTION_NOTE_vs_ATTACHED_ZIP_v0.1.md`: the supplied extraction note claims 128 ZIP entries while the attached archive accounting records 78 file entries. Establish whether the note refers to a different archive revision or counting convention; do not harmonize without evidence.
+2. Begin source-by-source semantic review of the 61 registry entries. Capture source-supported summary, provenance/commit where available, exact historical status and context, limitations, duplicate/overlap relations, conflicts, and acceptance rationale. Keep unknowns explicitly UNKNOWN/PENDING.
+3. Update the registry and reconciliation report in small traceable batches. Only after source review and conflict reconciliation may synthesis and architecture decision gates begin.
