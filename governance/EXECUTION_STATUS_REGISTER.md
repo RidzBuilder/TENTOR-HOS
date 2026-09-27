@@ -101,3 +101,11 @@
 3. Map version lineage and overlaps across CCH-OS v1.0/v1.1/ECAA-01/ECLB, ACS/ACOS/ACPA, EVO contracts, and LCH-OS/PBOS integration.
 4. Identify contradictions, domain-specific patterns, unvalidated universalization, missing evidence, and explicit acceptance tests.
 5. Only after these are documented, prepare a candidate TENTOR HOS synthesis for explicit review; no canonical architecture PASS is implied by 61/61 content review.
+
+
+## Cross-source reconciliation — initialized (2026-09-27)
+
+- Created `docs/evidence/reconciliation/CROSS_SOURCE_RECONCILIATION_REGISTER_v0.1.md` as an initial, explicitly non-acceptance register.
+- Recorded convergence candidates, domain-specific concepts not to universalize, six open reconciliation issues (TH-EV-017 identity/provenance; CCH-OS version lineage; specification-lock vs runtime evidence; DNA universality; TENTOR HOS vs AOS/Multiverse ontology; cross-project evidence model), and evidence maturity classifications.
+- This is an initial reconciliation register, not a completed reconciliation. The cross-source gate remains OPEN. No canonical principles, ontology, layer model, architecture, or specification have been accepted.
+- Immediate next work: reconcile TH-EV-017 against bundle support/source-reference metadata, then build CCH-OS v1.0/v1.1/ECAA-01 clause-level delta and the cross-project ontology/evidence crosswalk.
