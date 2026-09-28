@@ -9,10 +9,10 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FIXTURES_PATH = ROOT / "tests/fixtures/candidate-evidence-record-fixtures-v0.1.json"
+FIXTURES_PATH = ROOT / "tests/fixtures/candidate-evidence-record-fixtures-v0.1.json"\nSCHEMA_PATH = ROOT / "schemas/candidate/evidence-record-v0.1.schema.json"
 
 
-def disposition(record):
+def disposition(record, validator):
     """Return a conservative screening disposition, never a requirement PASS."""
     if not isinstance(record, dict):
         return "REJECT"
@@ -46,7 +46,7 @@ def main():
     cases = fixture_set.get("cases", [])
     failures = []
     for case in cases:
-        actual = disposition(case.get("record"))
+        actual = disposition(case.get("record"), validator)
         expected = case.get("expected_semantic_disposition")
         if actual != expected:
             failures.append((case.get("id"), expected, actual))
