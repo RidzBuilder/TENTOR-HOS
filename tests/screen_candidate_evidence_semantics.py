@@ -17,6 +17,8 @@ def disposition(record, validator):
     """Return a conservative screening disposition, never a requirement PASS."""
     if not isinstance(record, dict):
         return "REJECT"
+    if not validator.is_valid(record):
+        return "REJECT"
     if record.get("record_status") in {"REVOKED", "SUPERSEDED", "QUARANTINED"}:
         return "QUARANTINE_OR_LIMITED"
     provenance = record.get("provenance") or {}
@@ -29,14 +31,14 @@ def disposition(record, validator):
         return "REJECT"
     if result == "BLOCKED":
         return "BLOCKED_NOT_PASS"
+    if evidence_class == "EXTERNAL_PROVIDER_ARTIFACT":
+        return "QUARANTINE_OR_LIMITED"
     if source_type == "SYNTHETIC_FIXTURE":
         return "ELIGIBLE_FOR_SCOPED_REVIEW_ONLY"
     if integrity != "VERIFIED":
         return "QUARANTINE_OR_LIMITED"
     if evidence_class in {"TEST_PLAN", "SOURCE_DECLARATION"}:
         return "INSUFFICIENT_FOR_EXECUTION_CLAIM"
-    if evidence_class == "EXTERNAL_PROVIDER_ARTIFACT":
-        return "QUARANTINE_OR_LIMITED"
     if record.get("review", {}).get("review_status") != "INDEPENDENTLY_REVIEWED":
         return "ELIGIBLE_FOR_SCOPED_REVIEW_ONLY"
     return "ELIGIBLE_FOR_SCOPED_REVIEW_ONLY"
