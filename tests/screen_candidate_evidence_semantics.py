@@ -9,7 +9,8 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-FIXTURES_PATH = ROOT / "tests/fixtures/candidate-evidence-record-fixtures-v0.1.json"\nSCHEMA_PATH = ROOT / "schemas/candidate/evidence-record-v0.1.schema.json"
+FIXTURES_PATH = ROOT / "tests/fixtures/candidate-evidence-record-fixtures-v0.1.json"
+SCHEMA_PATH = ROOT / "schemas/candidate/evidence-record-v0.1.schema.json"
 
 
 def disposition(record, validator):
@@ -43,6 +44,10 @@ def disposition(record, validator):
 
 def main():
     fixture_set = json.loads(FIXTURES_PATH.read_text(encoding="utf-8"))
+    schema = json.loads(SCHEMA_PATH.read_text(encoding="utf-8"))
+    from jsonschema import Draft202012Validator, FormatChecker
+    Draft202012Validator.check_schema(schema)
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
     cases = fixture_set.get("cases", [])
     failures = []
     for case in cases:
