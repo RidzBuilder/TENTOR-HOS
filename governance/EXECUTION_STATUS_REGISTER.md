@@ -109,3 +109,13 @@
 - Recorded convergence candidates, domain-specific concepts not to universalize, six open reconciliation issues (TH-EV-017 identity/provenance; CCH-OS version lineage; specification-lock vs runtime evidence; DNA universality; TENTOR HOS vs AOS/Multiverse ontology; cross-project evidence model), and evidence maturity classifications.
 - This is an initial reconciliation register, not a completed reconciliation. The cross-source gate remains OPEN. No canonical principles, ontology, layer model, architecture, or specification have been accepted.
 - Immediate next work: reconcile TH-EV-017 against bundle support/source-reference metadata, then build CCH-OS v1.0/v1.1/ECAA-01 clause-level delta and the cross-project ontology/evidence crosswalk.
+
+
+## Verification update — 2026-09-30
+
+- Candidate evidence workflow was inspected at the current branch head.
+- A malformed semantic-screening YAML step containing literal escaped newline sequences was corrected and committed in 2035e931ff92f49c0f4d53abc5b8d0d26245b580.
+- The workflow now explicitly runs schema/fixture validation, conservative semantic screening, adversarial semantic screening, and negative controls.
+- The current-head workflow lookup returned no pull-request-triggered run. Consequently, no current-head CI PASS is claimed and the four validation stages remain NOT VERIFIED.
+- Execution update: governance/execution-updates/2026-09-30-semantic-evidence-gate.md.
+- PR #1 remains Open / Draft / not merged. Architecture acceptance remains gated.
