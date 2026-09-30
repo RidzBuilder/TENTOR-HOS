@@ -26,7 +26,10 @@ jobs:
       - name: Validate schema and synthetic fixtures
         run: python tests/validate_candidate_evidence_schema.py
 
-      - name: Run conservative semantic screening\n        run: python tests/screen_candidate_evidence_semantics.py\n\n      - name: Run adversarial semantic screening tests
+      - name: Run conservative semantic screening
+        run: python tests/screen_candidate_evidence_semantics.py
+
+      - name: Run adversarial semantic screening tests
         run: python tests/test_candidate_evidence_semantics_adversarial.py
 
       - name: Run negative controls
