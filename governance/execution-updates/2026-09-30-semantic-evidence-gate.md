@@ -9,7 +9,7 @@ Continue S00-05 cross-source evidence work while preserving the existing non-acc
 - Repository: `RidzBuilder/TENTOR-HOS`
 - Branch: `bootstrap/step-00-baseline-recovery`
 - PR: #1, Open, Draft, not merged
-- Current head at verification: `2035e931ff92f49c0f4d53abc5b8d0d26245b580`
+- Current head at verification: `dd2b6a0d9afa334f527fa65ceec41ed22b60ce93`
 
 ## Actions executed
 
@@ -20,20 +20,21 @@ Continue S00-05 cross-source evidence work while preserving the existing non-acc
    - `python tests/screen_candidate_evidence_semantics.py`
 4. Earlier semantic-screening remediation also added schema validation inside the disposition path and placed `EXTERNAL_PROVIDER_ARTIFACT` screening before the synthetic-fixture shortcut.
 5. Read back the workflow after the fix.
-6. Requested workflow-run evidence for the current head.
+6. Retrieved the current-head workflow runs through the GitHub Actions REST resource, then inspected the successful PR run, job steps, and full job log.
 
 ## Verification result
 
 The workflow file is now structurally readable in the repository and contains the intended four validation stages: schema/fixtures, conservative semantic screening, adversarial semantic screening, and negative controls.
 
-However, the GitHub workflow-run API available to this execution returned **no pull-request-triggered run for the current head**. Therefore:
+The current head has a completed successful GitHub Actions run: run `36692672488` / job `109813258048`, with both `pull_request` and `push` triggers represented for the same head. The job completed successfully and all four validation stages completed successfully.
 
-- CI PASS: **NOT VERIFIED**
-- Semantic screening PASS: **NOT VERIFIED**
-- Adversarial screening PASS: **NOT VERIFIED**
-- Negative-control PASS: **NOT VERIFIED**
+- Schema + synthetic fixtures: **PASS — 7/7 expectations matched**
+- Conservative semantic screening: **PASS — 7/7 expectations matched**
+- Adversarial semantic screening: **PASS — 8/8 synthetic expectations matched**
+- Negative controls: **PASS — 3/3 passed**
+- Overall workflow run: **SUCCESS**
 
-A repository write is not treated as a test result.
+The logs explicitly limit these results to synthetic/schema/semantic conformance checks; they do not establish evidence authenticity, requirement satisfaction, runtime conformance, or a project-level gate PASS.
 
 ## Evidence synthesis boundary
 
@@ -45,7 +46,7 @@ CCH-OS source review preserves the historical master AAFA gate as FAIL, remediat
 
 **S00-05 — Cross-source evidence synthesis:** IN PROGRESS / acceptance OPEN.
 
-**Candidate evidence conformance:** BLOCKED FOR ACCEPTANCE until executable CI evidence for the current head is observable and reviewed.
+**Candidate evidence conformance:** CURRENT-HEAD CI VERIFIED for the candidate validation workflow; broader evidence-model acceptance remains OPEN.
 
 **Fundamental TENTOR HOS V.2 specification:** NOT STARTED as an accepted specification.
 
@@ -53,8 +54,8 @@ CCH-OS source review preserves the historical master AAFA gate as FAIL, remediat
 
 ## Next controlled action
 
-1. Obtain an observable workflow run for the current head.
-2. Inspect job-level result and logs for all four validation stages.
-3. Remediate any actual test failure, then rerun.
-4. Only after current-head conformance evidence is established, continue candidate evidence aggregation semantics and unresolved cross-source reconciliation.
+1. Preserve the verified CI run as bounded execution evidence.
+2. Continue candidate evidence aggregation semantics and adversarial review.
+3. Continue CR-03 status reconciliation and unresolved cross-source issues.
+4. Keep broader architecture acceptance gated until reconciliation and explicit human acceptance are complete.
 5. Do not merge PR #1 or lock architecture during this gate.
