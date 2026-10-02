@@ -34,3 +34,6 @@ jobs:
 
       - name: Run negative controls
         run: python tests/test_candidate_evidence_schema_negative_controls.py
+
+      - name: Run candidate aggregation semantics tests
+        run: python tests/test_candidate_evidence_aggregation_semantics.py
