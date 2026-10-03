@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tentor-hos.invalid/schemas/candidate-evidence-record-v0.1.schema.json",
+  "title": "TENTOR HOS Candidate Evidence Record v0.1",
+  "description": "Non-normative candidate schema. Not accepted for canonical or production use.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "record_id",
+    "evidence_class",
+    "claim",
+    "scope",
+    "result",
+    "provenance",
+    "artifact_refs",
+    "recorded_at",
+    "record_status"
+  ],
+  "properties": {
+    "record_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "evidence_class": {
+      "enum": [
+        "SOURCE_DECLARATION",
+        "TEST_PLAN",
+        "TEST_EXECUTION",
+        "CI_EXECUTION",
+        "RUNTIME_OBSERVATION",
+        "EXTERNAL_PROVIDER_ARTIFACT",
+        "INDEPENDENT_REVIEW",
+        "SCHEMA_VALIDATION",
+        "OTHER"
+      ]
+    },
+    "claim": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "subject_id",
+        "assertion"
+      ],
+      "properties": {
+        "subject_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "assertion": {
+          "type": "string",
+          "minLength": 1
+        },
+        "requirement_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "requirement_version": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "system_revision",
+        "environment",
+        "boundaries"
+      ],
+      "properties": {
+        "system_revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "environment": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "platform": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "provider": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tenant": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "workload": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "time_window": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "boundaries": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "result": {
+      "enum": [
+        "PASS",
+        "FAIL",
+        "BLOCKED",
+        "PARTIAL",
+        "INCONCLUSIVE",
+        "NOT_RUN",
+        "NOT_APPLICABLE"
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_type",
+        "source_locator",
+        "captured_at",
+        "integrity_status"
+      ],
+      "properties": {
+        "source_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_locator": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "captured_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "integrity_status": {
+          "enum": [
+            "VERIFIED",
+            "UNVERIFIED",
+            "FAILED",
+            "NOT_CHECKED"
+          ]
+        },
+        "sha256": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "^[a-fA-F0-9]{64}$"
+        },
+        "parent_record_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "artifact_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "locator",
+          "artifact_type"
+        ],
+        "properties": {
+          "locator": {
+            "type": "string",
+            "minLength": 1
+          },
+          "artifact_type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sha256": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "pattern": "^[a-fA-F0-9]{64}$"
+          }
+        }
+      }
+    },
+    "recorded_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "record_status": {
+      "enum": [
+        "ACTIVE",
+        "QUARANTINED",
+        "REVOKED",
+        "SUPERSEDED"
+      ]
+    },
+    "review": {
+      "type": [
+        "object",
+        "null"
+      ],
+      "additionalProperties": false,
+      "required": [
+        "review_status"
+      ],
+      "properties": {
+        "review_status": {
+          "enum": [
+            "NOT_REVIEWED",
+            "REVIEWED",
+            "INDEPENDENTLY_REVIEWED"
+          ]
+        },
+        "reviewer_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "remediation": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}
