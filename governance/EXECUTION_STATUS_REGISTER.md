@@ -24,7 +24,7 @@
 | S00-02 | Validate supplied ZIP integrity | PASS | Archive opens and integrity checks completed; captured-file manifest 76/76 and checksum list 77/77 match. |
 | S00-03 | Reconcile archive accounting | PASS — structural only | 78 archive file entries classified; 61 project artifacts reconcile as 20 primary evidence + 41 repository snapshots; 17 support entries separately classified. |
 | S00-04 | Establish Evidence Registry intake scaffold for 61 project artifacts | COMPLETE — intake only | Registry contains 61 stable IDs; all acceptance remains pending. |
-| S00-05 | Source-by-source evidence synthesis | IN PROGRESS — reconciliation | All 61 project-artifact records have content review. Candidate evidence schema/semantic/aggregation controls have successful bounded CI execution. CR-01 remains provenance-open; CR-02 now has bounded clause/requirement lineage but approval, complete source corpus, implementation and conformance linkage remain open; CR-03–CR-06 remain open. |
+| S00-05 | Source-by-source evidence synthesis | IN PROGRESS — reconciliation | All 61 project-artifact records have content review. Candidate evidence schema/semantic/aggregation controls have successful bounded CI execution. CR-01 remains provenance-open; CR-02 has bounded clause/requirement lineage but approval, complete source corpus, implementation and conformance linkage remain open; CR-03–CR-06 remain open. Status/evidence promotion taxonomy has now been drafted as a separate non-canonical working artifact. |
 | S00-06 | TENTOR HOS V.2 fundamental specification | NOT STARTED | Depends on accepted synthesis and explicit architecture decision gates. |
 | S00-07 | Implementation baseline and conformance | NOT STARTED | Depends on approved specification and implementation contract. |
 | S00-08 | Independent U-AAFA | NOT STARTED / GATED | Run only after spec and implementation are final and auditable. |
@@ -35,7 +35,32 @@
 **STEP 00 Evidence Registry intake scaffold:** COMPLETE. **Semantic source review:** CONTENT REVIEW COMPLETE (61/61 project-artifact records reviewed; acceptance pending). **Cross-source reconciliation and acceptance:** OPEN.  
 **Overall TENTOR HOS V.2:** IN PROGRESS — no overall PASS claim.
 
-## Latest completed execution — 2026-10-05 — CR-02 bounded lineage reconciliation
+## Latest completed execution — 2026-10-05 — status/evidence promotion taxonomy
+
+A candidate lifecycle model was created at:
+
+`docs/evidence/reconciliation/STATUS_EVIDENCE_PROMOTION_TAXONOMY_v0.1.md`
+
+Commit:
+
+`d36e04494234a0023f46bdcafe6e91a61f79b28c`
+
+The artifact explicitly separates two axes:
+
+1. evidence/assurance maturity; and
+2. subject lifecycle status.
+
+Candidate lifecycle states are:
+
+`PROPOSAL` → `APPROVED-DESIGN` → `IMPLEMENTED` → `TESTED` → `INDEPENDENTLY-VERIFIED` → `ACCEPTED-FOR-SCOPE` → `PRODUCTION-ACCEPTED`
+
+with `SOURCE-DECLARED` treated as an imported provenance state rather than a promotion step, and `DEPRECATED`, `REJECTED`, and `REVOKED` treated as governance outcomes.
+
+The taxonomy also defines promotion contracts, demotion/revocation/re-evaluation rules, status-record requirements, anti-inflation shortcuts, conflict handling, freshness boundaries, source-project mapping rules, and adversarial falsification cases.
+
+**Boundary:** this taxonomy is WORKING / NON-CANONICAL / NOT ACCEPTED. It does not change any CR disposition or promote any historical source claim.
+
+## Latest prior execution — 2026-10-05 — CR-02 bounded lineage reconciliation
 
 Direct comparison was performed against the three captured CCH-OS artifacts from the supplied baseline ZIP.
 
@@ -65,8 +90,9 @@ The earlier Batch 01–09 source-review records, CR-01 investigation, and candid
 
 1. Preserve CR-01 as partially resolved until original Library provenance metadata is available.
 2. Preserve CR-02 as partially progressed; do not reconstruct the missing v1.0 corpus or infer approval.
-3. Build the cross-project ontology crosswalk, explicitly distinguishing semantic equivalence from terminology overlap.
-4. Build the requirements-to-evidence matrix with counterexamples/falsifiers.
-5. Build the status taxonomy and evidence promotion rules.
-6. Only after reconciliation gates are complete, draft candidate architecture synthesis and explicit acceptance tests.
-7. Do not merge PR #1 or initiate independent U-AAFA at this stage.
+3. Reconcile the new status/evidence promotion taxonomy against the candidate requirement matrix, evidence aggregation semantics, and CR-03/CR-06 evidence.
+4. Continue requirements-to-evidence reconciliation and falsifier coverage.
+5. Only after reconciliation gates are complete, draft candidate architecture synthesis and explicit acceptance tests.
+6. Do not merge PR #1 or initiate independent U-AAFA at this stage.
+
+---
