@@ -79,7 +79,7 @@ ECAA-01 explicitly labels itself Proposed / Ready for Library and an architectur
 - ACPA has source-reported architecture acceptance lock; CCH-OS AAFA report says master gate FAIL and remediation campaign says EVIDENCE-PENDING; EVO locked specs coexist with gates in progress and E2E pending; LCH-OS API/compliance docs are not live-tested.
 - Candidate evidence-state/schema, semantic screening, adversarial controls, negative controls, and aggregation semantics now have a successful bounded CI execution: run `36974542605`, job `110735416240`, head `369013bbe58dcae8774bbb5a042f97ceebc96f99`. The aggregation harness produced 10/10 synthetic expectations.
 - Consequence remains unchanged: distinguish document lock, design review, test plan, test execution, repository CI, runtime conformance, and production acceptance as separate states.
-- Status: **OPEN — candidate CI execution verified, canonical/runtime reconciliation unresolved.**
+- **Status: OPEN — candidate CI execution verified, canonical/runtime reconciliation unresolved.**
 
 ### CR-04 — Candidate DNA universality
 
@@ -100,7 +100,7 @@ ECAA-01 explicitly labels itself Proposed / Ready for Library and an architectur
 - A candidate evidence record schema plus semantic/adversarial/negative-control and aggregation harnesses now execute successfully in CI for synthetic cases.
 - This execution validates the bounded candidate test harness behavior, not the canonical evidence ontology, authenticity of project evidence, or cross-project requirement satisfaction.
 - Consequence remains: canonical evidence records must separate source claim, artifact identity/hash, context, method, time, evaluator, scope, result, limitation, and independent verification.
-- Status: **OPEN — candidate model execution verified; canonical cross-project evidence model not accepted.**
+- **Status: OPEN — candidate model execution verified; canonical cross-project evidence model not accepted.**
 
 ## 5. Evidence maturity and verification matrix
 
@@ -116,16 +116,35 @@ ECAA-01 explicitly labels itself Proposed / Ready for Library and an architectur
 | Inference/generalization | Labeled as inference/candidate, requiring counterexample and cross-domain validation. |
 | Unknown/missing source | Remains UNKNOWN/OPEN; not filled from assumptions. |
 
-## 6. Proposed next reconciliation actions
+## 6. Status and evidence promotion taxonomy reconciliation
+
+A candidate status lifecycle has now been added at:
+
+`docs/evidence/reconciliation/STATUS_EVIDENCE_PROMOTION_TAXONOMY_v0.1.md`
+
+Commit: `d36e04494234a0023f46bdcafe6e91a61f79b28c`
+
+The candidate model explicitly separates evidence/assurance maturity from subject lifecycle status.
+
+Candidate lifecycle:
+
+`PROPOSAL → APPROVED-DESIGN → IMPLEMENTED → TESTED → INDEPENDENTLY-VERIFIED → ACCEPTED-FOR-SCOPE → PRODUCTION-ACCEPTED`
+
+`SOURCE-DECLARED` is treated as imported source provenance rather than a promotion step. `DEPRECATED`, `REJECTED`, and `REVOKED` are governance outcomes.
+
+The candidate taxonomy also introduces explicit contracts for promotion, demotion/revocation/re-evaluation, anti-inflation controls, conflict handling, freshness boundaries, source-project mapping, and adversarial falsification.
+
+**Reconciliation disposition:** candidate lifecycle is structurally compatible with the existing evidence/result separation, but it remains non-canonical. Authority model, independence thresholds, freshness policy, waiver semantics, policy migration, machine-readable status schema, and production-specific acceptance rules remain open.
+
+## 7. Proposed next reconciliation actions
 
 1. Preserve CR-01 as partially resolved until original Library provenance metadata becomes available.
 2. Continue CR-02 only for the missing v1.0 corpus, approval/change-control lineage, adoption decision, and implementation/conformance linkage; do not recreate missing source content.
-3. Build an ontology crosswalk for shared concepts across ACS/ACOS/ACPA/CCH-OS/EVO/LCH-OS, recording synonyms, non-equivalences, source IDs, scope, and confidence.
-4. Build a requirements-to-evidence matrix for every candidate principle, including counterexamples and what would falsify it.
-5. Build a status taxonomy separating proposal, source-declared lock, approved design, implemented, tested, independently verified, production accepted, and deprecated.
-6. Only after these are complete, draft a candidate architecture synthesis and explicit acceptance tests for human review.
+3. Reconcile the status/evidence promotion taxonomy against the candidate requirement matrix, aggregation semantics, and candidate test vectors.
+4. Continue requirements-to-evidence reconciliation and falsifier coverage.
+5. Only after reconciliation gates are complete, draft a candidate architecture synthesis and explicit acceptance tests for human review.
 
-## 7. Gate disposition
+## 8. Gate disposition
 
 **Cross-source reconciliation:** IN PROGRESS / OPEN.  
 **Content review:** 61/61 registry artifacts reviewed.  
@@ -133,3 +152,5 @@ ECAA-01 explicitly labels itself Proposed / Ready for Library and an architectur
 **Fundamental specification:** Not started as an accepted specification; synthesis remains gated on reconciliation.  
 **Implementation / U-AAFA:** Not authorized by this register.  
 **Overall TENTOR HOS V.2:** IN PROGRESS — no overall PASS claim.
+
+---
