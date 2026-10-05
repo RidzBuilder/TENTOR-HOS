@@ -1,6 +1,6 @@
 # TENTOR HOS V.2 — Cross-Source Reconciliation Register v0.1 (Initial)
 
-**Date:** 2026-10-03  
+**Date:** 2026-10-05  
 **Gate:** S00-05 — cross-source reconciliation  
 **Status:** INITIAL RECONCILIATION / OPEN — NOT ACCEPTANCE  
 **Evidence coverage:** TH-EV-001–061 content reviewed in batches 01–09; all acceptance states remain pending.
@@ -52,10 +52,27 @@ Status terms:
 
 ### CR-02 — CCH-OS architecture version/evolution lineage
 
-- Sources include v1.0 architecture, v1.1 structurally corrected architecture, and ECAA-01 evolution artifact.
-- Review has not yet produced a line-by-line normative delta, approval chain, and associated conformance evidence.
-- Consequence: no assumption that v1.1 silently supersedes all v1.0 clauses or that ECAA-01 is implemented.
-- Status: OPEN.
+**Updated 2026-10-05.**
+
+Direct comparison of the three captured baseline artifacts has now produced a bounded clause/requirement lineage map in:
+
+`docs/evidence/reconciliation/CCH_OS_V1_V1_1_ECAA01_CLAUSE_LINEAGE_v0.2.md`
+
+Verified source hashes:
+
+- v1.0: `b21928c13c02cbf90fcac3852309b3fe177277881be1217840d8ccd352565faa`
+- v1.1: `6e444491af880db0c94e0d5958437483205cdac989564cfae3ed09da4654cef0`
+- ECAA-01: `f73ce26b50238f9422f2d62495d4c4f0022886cc0fa733d451a9da5767a3b5d1`
+
+The reconciliation establishes shared/expanded clause families, including semantic independence, capability/tool separation, authority separation, provenance/lineage, replaceability/evolvability, L0–L7 structure, module/contract expansion, and ECAA-01 capability specification/adapter resolution.
+
+A material source boundary was also verified: the captured v1.0 text ends at **5.15 Transformation Contract**, while v1.1 continues through 5.24 and additional runtime/state/event/agent sections. Therefore the work is **not a complete semantic diff of the full v1.0 specification**; the missing v1.0 continuation is preserved as UNKNOWN rather than reconstructed.
+
+A second source-level metadata issue was verified: the v1.1 header identifies itself as v1.1/structurally corrected/pending structural re-validation, while the embedded document title says v1.0. This does not establish supersession, approval, or authoring cause.
+
+ECAA-01 explicitly labels itself Proposed / Ready for Library and an architectural evolution candidate. It states that its explicit capability specification + adapter-agnostic resolution is an accepted evolution candidate while explicitly requiring future gate/comparison/validation/change-control for adoption into the CCH-OS baseline.
+
+**Disposition: PARTIALLY PROGRESSED — bounded clause/requirement reconciliation verified; approval lineage, complete v1.0 corpus, adoption decision, implementation linkage, conformance evidence, and independent review remain OPEN.**
 
 ### CR-03 — Specification/lock vs runtime evidence
 
@@ -101,8 +118,8 @@ Status terms:
 
 ## 6. Proposed next reconciliation actions
 
-1. Resolve CR-01 TH-EV-017 identity/provenance using baseline support records and source metadata.
-2. Produce CCH-OS v1.0↔v1.1↔ECAA-01 clause-level delta and approval/evidence map.
+1. Preserve CR-01 as partially resolved until original Library provenance metadata becomes available.
+2. Continue CR-02 only for the missing v1.0 corpus, approval/change-control lineage, adoption decision, and implementation/conformance linkage; do not recreate missing source content.
 3. Build an ontology crosswalk for shared concepts across ACS/ACOS/ACPA/CCH-OS/EVO/LCH-OS, recording synonyms, non-equivalences, source IDs, scope, and confidence.
 4. Build a requirements-to-evidence matrix for every candidate principle, including counterexamples and what would falsify it.
 5. Build a status taxonomy separating proposal, source-declared lock, approved design, implemented, tested, independently verified, production accepted, and deprecated.
