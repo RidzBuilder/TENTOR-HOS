@@ -40,3 +40,18 @@ jobs:
 
       - name: Run status requirement aggregation reconciliation tests
         run: python tests/test_status_requirement_aggregation_reconciliation.py
+
+      - name: Validate RAG-01 requirement evidence linkage
+        run: python tests/validate_requirement_evidence_link.py
+
+      - name: Run RAG-01 linkage negative controls
+        run: python tests/test_rag01_linkage_negative_controls.py
+
+      - name: Run RAG-02 lifecycle transition vectors
+        run: python tests/test_rag02_lifecycle_vectors.py
+
+      - name: Validate RAG-09 governance decision records
+        run: python tests/validate_governance_decision_record.py
+
+      - name: Run RAG-03 to RAG-08 candidate harness contract checks
+        run: python tests/test_rag03_rag08_candidate_harness.py
