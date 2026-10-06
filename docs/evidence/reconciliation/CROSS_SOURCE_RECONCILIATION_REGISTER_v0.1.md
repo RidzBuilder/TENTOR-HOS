@@ -1,6 +1,6 @@
 # TENTOR HOS V.2 — Cross-Source Reconciliation Register v0.1 (Initial)
 
-**Date:** 2026-10-05  
+**Date:** 2026-10-06  
 **Gate:** S00-05 — cross-source reconciliation  
 **Status:** INITIAL RECONCILIATION / OPEN — NOT ACCEPTANCE  
 **Evidence coverage:** TH-EV-001–061 content reviewed in batches 01–09; all acceptance states remain pending.
@@ -77,7 +77,8 @@ ECAA-01 explicitly labels itself Proposed / Ready for Library and an architectur
 ### CR-03 — Specification/lock vs runtime evidence
 
 - ACPA has source-reported architecture acceptance lock; CCH-OS AAFA report says master gate FAIL and remediation campaign says EVIDENCE-PENDING; EVO locked specs coexist with gates in progress and E2E pending; LCH-OS API/compliance docs are not live-tested.
-- Candidate evidence-state/schema, semantic screening, adversarial controls, negative controls, and aggregation semantics now have a successful bounded CI execution: run `36974542605`, job `110735416240`, head `369013bbe58dcae8774bbb5a042f97ceebc96f99`. The aggregation harness produced 10/10 synthetic expectations.
+- Candidate evidence-state/schema, semantic screening, adversarial controls, negative controls, and aggregation semantics have successful bounded CI execution. The latest reconciliation control run is `37463407120`, job `112268346999`, head `b2acf233b524240012f028ba18ddb3654a78a4d8`, with all workflow steps successful.
+- The new status/result reconciliation test produced **8/8 synthetic expectations passed**.
 - Consequence remains unchanged: distinguish document lock, design review, test plan, test execution, repository CI, runtime conformance, and production acceptance as separate states.
 - **Status: OPEN — candidate CI execution verified, canonical/runtime reconciliation unresolved.**
 
@@ -97,8 +98,8 @@ ECAA-01 explicitly labels itself Proposed / Ready for Library and an architectur
 ### CR-06 — Cross-project evidence model
 
 - Projects use evidence registries, traceability chains, execution logs, audit reports, and conformance suites with different semantics.
-- A candidate evidence record schema plus semantic/adversarial/negative-control and aggregation harnesses now execute successfully in CI for synthetic cases.
-- This execution validates the bounded candidate test harness behavior, not the canonical evidence ontology, authenticity of project evidence, or cross-project requirement satisfaction.
+- Candidate evidence schema, semantic/adversarial/negative-control, aggregation, and status/requirement/aggregation reconciliation harnesses now execute successfully in CI for synthetic cases.
+- This execution validates bounded candidate test harness behavior, not the canonical evidence ontology, authenticity of project evidence, or cross-project requirement satisfaction.
 - Consequence remains: canonical evidence records must separate source claim, artifact identity/hash, context, method, time, evaluator, scope, result, limitation, and independent verification.
 - **Status: OPEN — candidate model execution verified; canonical cross-project evidence model not accepted.**
 
@@ -116,33 +117,37 @@ ECAA-01 explicitly labels itself Proposed / Ready for Library and an architectur
 | Inference/generalization | Labeled as inference/candidate, requiring counterexample and cross-domain validation. |
 | Unknown/missing source | Remains UNKNOWN/OPEN; not filled from assumptions. |
 
-## 6. Status and evidence promotion taxonomy reconciliation
+## 6. Status / requirement / aggregation reconciliation
 
-A candidate status lifecycle has now been added at:
+Created:
 
-`docs/evidence/reconciliation/STATUS_EVIDENCE_PROMOTION_TAXONOMY_v0.1.md`
+`docs/evidence/reconciliation/STATUS_REQUIREMENT_AGGREGATION_RECONCILIATION_v0.1.md`
 
-Commit: `d36e04494234a0023f46bdcafe6e91a61f79b28c`
+Commit: `e466d3f954289332fb41a6393992db46860ba0ac`
 
-The candidate model explicitly separates evidence/assurance maturity from subject lifecycle status.
+The reconciliation establishes that candidate requirements, evidence/maturity, aggregation result, lifecycle state, and governance decision are distinct semantic layers.
 
-Candidate lifecycle:
+CRQ-01–CRQ-12 are mapped to evidence/aggregation dependencies, lifecycle dependencies, current test coverage, and open disposition.
 
-`PROPOSAL → APPROVED-DESIGN → IMPLEMENTED → TESTED → INDEPENDENTLY-VERIFIED → ACCEPTED-FOR-SCOPE → PRODUCTION-ACCEPTED`
+New reconciliation gaps RAG-01–RAG-11 are recorded. These include machine-readable linkage, lifecycle-transition vectors, provider-swap testing, authorization enforcement, state/history/recovery testing, typed fulfillment/fallback testing, cross-domain testing, target E2E provenance, governance decision records, freshness/expiry policy, and conflict/waiver policy.
 
-`SOURCE-DECLARED` is treated as imported source provenance rather than a promotion step. `DEPRECATED`, `REJECTED`, and `REVOKED` are governance outcomes.
+A synthetic transition harness was added and executed successfully:
 
-The candidate taxonomy also introduces explicit contracts for promotion, demotion/revocation/re-evaluation, anti-inflation controls, conflict handling, freshness boundaries, source-project mapping, and adversarial falsification.
+- Run: `37463407120`
+- Job: `112268346999`
+- Result: SUCCESS
+- Status/result reconciliation: **8/8**
+- Full workflow steps: **all SUCCESS**
 
-**Reconciliation disposition:** candidate lifecycle is structurally compatible with the existing evidence/result separation, but it remains non-canonical. Authority model, independence thresholds, freshness policy, waiver semantics, policy migration, machine-readable status schema, and production-specific acceptance rules remain open.
+This is candidate control evidence only.
 
 ## 7. Proposed next reconciliation actions
 
 1. Preserve CR-01 as partially resolved until original Library provenance metadata becomes available.
 2. Continue CR-02 only for the missing v1.0 corpus, approval/change-control lineage, adoption decision, and implementation/conformance linkage; do not recreate missing source content.
-3. Reconcile the status/evidence promotion taxonomy against the candidate requirement matrix, aggregation semantics, and candidate test vectors.
-4. Continue requirements-to-evidence reconciliation and falsifier coverage.
-5. Only after reconciliation gates are complete, draft a candidate architecture synthesis and explicit acceptance tests for human review.
+3. Resolve RAG-01–RAG-11 selectively through bounded candidate test vectors and evidence reconciliation.
+4. Continue CR-03–CR-06 without promoting candidate controls to canonical status.
+5. Only after reconciliation gates are complete, draft candidate architecture synthesis and explicit acceptance tests for human review.
 
 ## 8. Gate disposition
 
