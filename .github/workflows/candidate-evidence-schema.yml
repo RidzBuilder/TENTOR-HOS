@@ -37,3 +37,6 @@ jobs:
 
       - name: Run candidate aggregation semantics tests
         run: python tests/test_candidate_evidence_aggregation_semantics.py
+
+      - name: Run status requirement aggregation reconciliation tests
+        run: python tests/test_status_requirement_aggregation_reconciliation.py
