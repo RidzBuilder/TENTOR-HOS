@@ -156,6 +156,34 @@ Disposition:
 ### Gate rule
 Do not convert the candidate specification into an accepted architecture until an explicit governance decision records accepted/rejected/scoped requirements, unresolved conflicts, layer boundaries, implementation contract, test/evidence mapping, authority, and version.
 
+## 2026-10-07 — Architecture Acceptance gate
+
+Created:
+`docs/architecture/ARCHITECTURE_ACCEPTANCE_GATE_v0.1.md`
+
+Commit: `160b23fd446b5f546b5ad51372cd7ba6944a4535`
+
+Gate disposition:
+**ARCHITECTURE ACCEPTANCE: BLOCKED / NOT ACCEPTED.**
+
+Blocking conditions:
+- CRQ-01..12 remain candidate/non-canonical.
+- CR-01..CR-06 remain open to varying degrees.
+- Implementation contract has not been explicitly accepted.
+- No executable TENTOR HOS application surface exists for runtime feasibility validation.
+
+Consequences:
+- S00-07 / Full-Stack Implementation: NOT AUTHORIZED.
+- Agent Runtime: NOT AUTHORIZED.
+- RAG-03..08 runtime conformance: NOT RUN.
+- Independent Engineering Verification: BLOCKED.
+- Pre-Release Review: BLOCKED.
+- AppDeploy Deployment: NOT AUTHORIZED.
+- E2E/QA: BLOCKED.
+- Production Acceptance: NOT APPLICABLE.
+
+Required next remediation is requirement-level governance + reconciliation closure sufficient to reopen Architecture Acceptance.
+
 ## Immediate next action
 
 1. Preserve CR-01 as partially resolved until original Library provenance metadata is available.
