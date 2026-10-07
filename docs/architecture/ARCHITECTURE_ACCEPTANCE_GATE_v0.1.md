@@ -73,3 +73,33 @@ No statement in this record should be interpreted as:
 - production acceptance.
 
 **Gate disposition: BLOCKED / NOT ACCEPTED.**
+
+
+## 8. Remediation execution update — 2026-10-07
+
+Created bounded remediation artifacts:
+
+- `docs/architecture/REQUIREMENT_GOVERNANCE_RECONCILIATION_v0.1.md`
+  - Commit: `aaedf50736723570587664a45edfb40ea8a43d96`
+  - Provides explicit proposed dispositions for CRQ-01..12 without claiming canonical authority.
+- `docs/architecture/FULLSTACK_IMPLEMENTATION_CONTRACT_CANDIDATE_v0.1.md`
+  - Commit: `8fd06570058c753a2fd51a2662c6195979df2caa`
+  - Defines frontend/backend/agent/state/auth/provider/evidence/deployment target contracts without authorizing implementation.
+
+### Re-gate result
+
+The remediation materially reduces ambiguity but **does not satisfy the governance-authority criterion**.
+
+Current status remains:
+
+- CRQ canonical acceptance: **0/12**
+- CR-01..CR-06: **not fully closed; explicitly scoped/open**
+- Architecture boundary: **candidate**
+- Implementation contract: **candidate**
+- Governance authority: **BLOCKED**
+- Runtime feasibility: **BLOCKED**
+- Architecture Acceptance: **NOT GRANTED**
+
+Therefore Full-Stack Implementation remains NOT AUTHORIZED.
+
+The next required action is an explicit authorized Architecture Acceptance decision, or a further user-directed governance remediation if the proposed dispositions are not accepted.
