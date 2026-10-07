@@ -128,6 +128,34 @@ CR-02 remains **PARTIALLY PROGRESSED**.
 
 Batch 01–09 source-review records, CR-01 investigation, candidate evidence schema/semantic/adversarial/negative-control/aggregation CI, ontology equivalence gate, requirement addendum, and prior reconciliation work remain preserved in repository history.
 
+## 2026-10-07 — Deployment readiness → Fundamental Specification transition
+
+### Gate-00 re-screening
+Re-verified against current repository/PR state:
+- PR #1 remains OPEN / DRAFT / UNMERGED.
+- Current PR head: `9bbb4ee5aa5f47f64f2ffd70834292a2b141e769`.
+- PR inventory is 70 changed files dominated by evidence/governance/schemas/fixtures/tests.
+- No verified executable Full-Stack frontend/backend application surface is present in the audited inventory.
+- AppDeploy currently lists 0 applications for the connected account.
+- Deployment readiness therefore remains **BLOCKED / NOT READY TO DEPLOY**.
+
+### Gate-01 Fundamental Specification
+Created candidate synthesis:
+`docs/specification/TENTOR_HOS_V2_FUNDAMENTAL_SPECIFICATION_CANDIDATE_v0.1.md`
+
+Commit: `f7518cd810e82b888cb242397dd0b617b5968683`
+
+Disposition:
+- Fundamental Specification candidate: **CREATED / NON-CANONICAL / NOT ACCEPTED**.
+- CRQ-01..12 remain candidate requirements; 0/12 canonical.
+- RAG-03..08 remain candidate runtime controls; runtime execution NOT_RUN.
+- Architecture Acceptance is **NOT STARTED / NOT ACCEPTED**.
+- Full-Stack Implementation remains **NOT AUTHORIZED**.
+- Deployment remains **NOT AUTHORIZED**.
+
+### Gate rule
+Do not convert the candidate specification into an accepted architecture until an explicit governance decision records accepted/rejected/scoped requirements, unresolved conflicts, layer boundaries, implementation contract, test/evidence mapping, authority, and version.
+
 ## Immediate next action
 
 1. Preserve CR-01 as partially resolved until original Library provenance metadata is available.
