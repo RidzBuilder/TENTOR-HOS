@@ -184,6 +184,33 @@ Consequences:
 
 Required next remediation is requirement-level governance + reconciliation closure sufficient to reopen Architecture Acceptance.
 
+## 2026-10-07 — Gate 02 remediation and re-gate
+
+Created:
+- `docs/architecture/REQUIREMENT_GOVERNANCE_RECONCILIATION_v0.1.md`
+  - Commit: `aaedf50736723570587664a45edfb40ea8a43d96`
+  - Proposed scoped/deferred dispositions for CRQ-01..12.
+- `docs/architecture/FULLSTACK_IMPLEMENTATION_CONTRACT_CANDIDATE_v0.1.md`
+  - Commit: `8fd06570058c753a2fd51a2662c6195979df2caa`
+  - Candidate frontend/backend/agent/state/auth/provider/evidence/deployment contract.
+
+Architecture Acceptance re-gate:
+**BLOCKED / NOT ACCEPTED.**
+
+Reason: remediation artifacts reduce ambiguity but do not create authorized governance authority. CRQ canonical acceptance remains 0/12; CR-01..CR-06 remain scoped/open; architecture and implementation contracts remain candidates; runtime feasibility remains blocked.
+
+Therefore:
+- Full-Stack Implementation: NOT AUTHORIZED.
+- Agent Runtime: NOT AUTHORIZED.
+- RAG-03..08 runtime: NOT RUN.
+- Independent Verification: BLOCKED.
+- Pre-Release: BLOCKED.
+- AppDeploy: NOT AUTHORIZED.
+- E2E/QA: BLOCKED.
+- Production Acceptance: NOT APPLICABLE.
+
+Next gate requirement: explicit authorized Architecture Acceptance decision with scope/version/authority/rationale, or further governance remediation.
+
 ## Immediate next action
 
 1. Preserve CR-01 as partially resolved until original Library provenance metadata is available.
