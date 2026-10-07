@@ -1,0 +1,4 @@
+[
+  {"link_id":"REL-001","requirement_id":"CRQ-01","criterion_id":"CRIT-CRQ-01-TRACE","evidence_refs":["TH-EV-018","CAND-EV-001"],"aggregation_result":"PASS","lifecycle_transition":{"from":"PROPOSAL","to":"APPROVED-DESIGN"},"governance_decision_ref":"DEC-CANDIDATE-001","scope":"candidate linkage only","limitations":["synthetic fixture"]},
+  {"link_id":"REL-002","requirement_id":"CRQ-04","criterion_id":"CRIT-CRQ-04-BOUNDARY","evidence_refs":["CAND-EV-004"],"aggregation_result":"BLOCKED","lifecycle_transition":{"from":"IMPLEMENTED","to":"TESTED"},"governance_decision_ref":"DEC-CANDIDATE-002","scope":"candidate linkage only","limitations":["execution evidence absent"]}
+]

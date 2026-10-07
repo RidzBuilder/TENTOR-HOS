@@ -1,0 +1,380 @@
+{
+  "fixture_set_id": "CAND-EV-FIXTURES-0.1",
+  "status": "SYNTHETIC_NOT_RUN",
+  "schema": "schemas/candidate/evidence-record-v0.1.schema.json",
+  "warning": "These fixtures are authored examples. They have not been validated by a JSON Schema engine and are not evidence about any real TENTOR HOS system.",
+  "cases": [
+    {
+      "id": "FIX-001",
+      "expected_schema_valid": true,
+      "expected_semantic_disposition": "ELIGIBLE_FOR_SCOPED_REVIEW_ONLY",
+      "description": "Minimal well-formed synthetic test execution record; passing schema does not prove claim.",
+      "record": {
+        "record_id": "SYN-EV-001",
+        "evidence_class": "TEST_EXECUTION",
+        "claim": {
+          "subject_id": "synthetic-service@abc123",
+          "assertion": "Synthetic unit test case T-1 passed",
+          "requirement_id": "SYN-REQ-1",
+          "requirement_version": "0.1"
+        },
+        "scope": {
+          "system_revision": "abc123",
+          "environment": "synthetic-ci",
+          "platform": null,
+          "provider": null,
+          "tenant": null,
+          "workload": "unit-test",
+          "time_window": "2026-09-27T10:00:00Z",
+          "boundaries": [
+            "synthetic fixture only"
+          ]
+        },
+        "result": "PASS",
+        "provenance": {
+          "source_type": "SYNTHETIC_FIXTURE",
+          "source_locator": "fixture://SYN-EV-001",
+          "captured_at": "2026-09-27T10:01:00Z",
+          "integrity_status": "NOT_CHECKED",
+          "sha256": null,
+          "parent_record_ids": []
+        },
+        "artifact_refs": [
+          {
+            "locator": "fixture://raw-output-001",
+            "artifact_type": "synthetic-test-output",
+            "sha256": null
+          }
+        ],
+        "recorded_at": "2026-09-27T10:02:00Z",
+        "record_status": "ACTIVE",
+        "review": {
+          "review_status": "NOT_REVIEWED",
+          "reviewer_ids": []
+        },
+        "limitations": [
+          "Synthetic only; not project evidence"
+        ],
+        "remediation": []
+      }
+    },
+    {
+      "id": "FIX-002",
+      "expected_schema_valid": false,
+      "expected_semantic_disposition": "REJECT",
+      "description": "Missing required record_id.",
+      "record": {
+        "evidence_class": "TEST_EXECUTION",
+        "claim": {
+          "subject_id": "synthetic-service@abc123",
+          "assertion": "Synthetic unit test case T-1 passed",
+          "requirement_id": "SYN-REQ-1",
+          "requirement_version": "0.1"
+        },
+        "scope": {
+          "system_revision": "abc123",
+          "environment": "synthetic-ci",
+          "platform": null,
+          "provider": null,
+          "tenant": null,
+          "workload": "unit-test",
+          "time_window": "2026-09-27T10:00:00Z",
+          "boundaries": [
+            "synthetic fixture only"
+          ]
+        },
+        "result": "PASS",
+        "provenance": {
+          "source_type": "SYNTHETIC_FIXTURE",
+          "source_locator": "fixture://SYN-EV-001",
+          "captured_at": "2026-09-27T10:01:00Z",
+          "integrity_status": "NOT_CHECKED",
+          "sha256": null,
+          "parent_record_ids": []
+        },
+        "artifact_refs": [
+          {
+            "locator": "fixture://raw-output-001",
+            "artifact_type": "synthetic-test-output",
+            "sha256": null
+          }
+        ],
+        "recorded_at": "2026-09-27T10:02:00Z",
+        "record_status": "ACTIVE",
+        "review": {
+          "review_status": "NOT_REVIEWED",
+          "reviewer_ids": []
+        },
+        "limitations": [
+          "Synthetic only; not project evidence"
+        ],
+        "remediation": []
+      }
+    },
+    {
+      "id": "FIX-003",
+      "expected_schema_valid": false,
+      "expected_semantic_disposition": "REJECT",
+      "description": "Unknown evidence class.",
+      "record": {
+        "record_id": "SYN-EV-001",
+        "evidence_class": "RUNTIME_MAGIC",
+        "claim": {
+          "subject_id": "synthetic-service@abc123",
+          "assertion": "Synthetic unit test case T-1 passed",
+          "requirement_id": "SYN-REQ-1",
+          "requirement_version": "0.1"
+        },
+        "scope": {
+          "system_revision": "abc123",
+          "environment": "synthetic-ci",
+          "platform": null,
+          "provider": null,
+          "tenant": null,
+          "workload": "unit-test",
+          "time_window": "2026-09-27T10:00:00Z",
+          "boundaries": [
+            "synthetic fixture only"
+          ]
+        },
+        "result": "PASS",
+        "provenance": {
+          "source_type": "SYNTHETIC_FIXTURE",
+          "source_locator": "fixture://SYN-EV-001",
+          "captured_at": "2026-09-27T10:01:00Z",
+          "integrity_status": "NOT_CHECKED",
+          "sha256": null,
+          "parent_record_ids": []
+        },
+        "artifact_refs": [
+          {
+            "locator": "fixture://raw-output-001",
+            "artifact_type": "synthetic-test-output",
+            "sha256": null
+          }
+        ],
+        "recorded_at": "2026-09-27T10:02:00Z",
+        "record_status": "ACTIVE",
+        "review": {
+          "review_status": "NOT_REVIEWED",
+          "reviewer_ids": []
+        },
+        "limitations": [
+          "Synthetic only; not project evidence"
+        ],
+        "remediation": []
+      }
+    },
+    {
+      "id": "FIX-004",
+      "expected_schema_valid": false,
+      "expected_semantic_disposition": "REJECT",
+      "description": "Invalid integrity enum.",
+      "record": {
+        "record_id": "SYN-EV-001",
+        "evidence_class": "TEST_EXECUTION",
+        "claim": {
+          "subject_id": "synthetic-service@abc123",
+          "assertion": "Synthetic unit test case T-1 passed",
+          "requirement_id": "SYN-REQ-1",
+          "requirement_version": "0.1"
+        },
+        "scope": {
+          "system_revision": "abc123",
+          "environment": "synthetic-ci",
+          "platform": null,
+          "provider": null,
+          "tenant": null,
+          "workload": "unit-test",
+          "time_window": "2026-09-27T10:00:00Z",
+          "boundaries": [
+            "synthetic fixture only"
+          ]
+        },
+        "result": "PASS",
+        "provenance": {
+          "source_type": "SYNTHETIC_FIXTURE",
+          "source_locator": "fixture://SYN-EV-001",
+          "captured_at": "2026-09-27T10:01:00Z",
+          "integrity_status": "TRUSTED",
+          "sha256": null,
+          "parent_record_ids": []
+        },
+        "artifact_refs": [
+          {
+            "locator": "fixture://raw-output-001",
+            "artifact_type": "synthetic-test-output",
+            "sha256": null
+          }
+        ],
+        "recorded_at": "2026-09-27T10:02:00Z",
+        "record_status": "ACTIVE",
+        "review": {
+          "review_status": "NOT_REVIEWED",
+          "reviewer_ids": []
+        },
+        "limitations": [
+          "Synthetic only; not project evidence"
+        ],
+        "remediation": []
+      }
+    },
+    {
+      "id": "FIX-005",
+      "expected_schema_valid": false,
+      "expected_semantic_disposition": "REJECT",
+      "description": "Malformed SHA-256.",
+      "record": {
+        "record_id": "SYN-EV-001",
+        "evidence_class": "TEST_EXECUTION",
+        "claim": {
+          "subject_id": "synthetic-service@abc123",
+          "assertion": "Synthetic unit test case T-1 passed",
+          "requirement_id": "SYN-REQ-1",
+          "requirement_version": "0.1"
+        },
+        "scope": {
+          "system_revision": "abc123",
+          "environment": "synthetic-ci",
+          "platform": null,
+          "provider": null,
+          "tenant": null,
+          "workload": "unit-test",
+          "time_window": "2026-09-27T10:00:00Z",
+          "boundaries": [
+            "synthetic fixture only"
+          ]
+        },
+        "result": "PASS",
+        "provenance": {
+          "source_type": "SYNTHETIC_FIXTURE",
+          "source_locator": "fixture://SYN-EV-001",
+          "captured_at": "2026-09-27T10:01:00Z",
+          "integrity_status": "NOT_CHECKED",
+          "sha256": "not-a-hash",
+          "parent_record_ids": []
+        },
+        "artifact_refs": [
+          {
+            "locator": "fixture://raw-output-001",
+            "artifact_type": "synthetic-test-output",
+            "sha256": null
+          }
+        ],
+        "recorded_at": "2026-09-27T10:02:00Z",
+        "record_status": "ACTIVE",
+        "review": {
+          "review_status": "NOT_REVIEWED",
+          "reviewer_ids": []
+        },
+        "limitations": [
+          "Synthetic only; not project evidence"
+        ],
+        "remediation": []
+      }
+    },
+    {
+      "id": "FIX-006",
+      "expected_schema_valid": true,
+      "expected_semantic_disposition": "BLOCKED_NOT_PASS",
+      "description": "Well-formed blocker observation.",
+      "record": {
+        "record_id": "SYN-EV-006",
+        "evidence_class": "RUNTIME_OBSERVATION",
+        "claim": {
+          "subject_id": "synthetic-service@abc123",
+          "assertion": "Synthetic execution blocked by absent credential",
+          "requirement_id": "SYN-REQ-1",
+          "requirement_version": "0.1"
+        },
+        "scope": {
+          "system_revision": "abc123",
+          "environment": "synthetic-ci",
+          "platform": null,
+          "provider": null,
+          "tenant": null,
+          "workload": "unit-test",
+          "time_window": "2026-09-27T10:00:00Z",
+          "boundaries": [
+            "synthetic fixture only"
+          ]
+        },
+        "result": "BLOCKED",
+        "provenance": {
+          "source_type": "SYNTHETIC_FIXTURE",
+          "source_locator": "fixture://SYN-EV-001",
+          "captured_at": "2026-09-27T10:01:00Z",
+          "integrity_status": "NOT_CHECKED",
+          "sha256": null,
+          "parent_record_ids": []
+        },
+        "artifact_refs": [],
+        "recorded_at": "2026-09-27T10:02:00Z",
+        "record_status": "ACTIVE",
+        "review": {
+          "review_status": "NOT_REVIEWED",
+          "reviewer_ids": []
+        },
+        "limitations": [
+          "Synthetic only; not project evidence"
+        ],
+        "remediation": []
+      }
+    },
+    {
+      "id": "FIX-007",
+      "expected_schema_valid": true,
+      "expected_semantic_disposition": "QUARANTINE_OR_LIMITED",
+      "description": "Provider artifact is bounded evidence, not product E2E.",
+      "record": {
+        "record_id": "SYN-EV-007",
+        "evidence_class": "EXTERNAL_PROVIDER_ARTIFACT",
+        "claim": {
+          "subject_id": "synthetic-service@abc123",
+          "assertion": "Synthetic provider returned an artifact",
+          "requirement_id": "SYN-REQ-1",
+          "requirement_version": "0.1"
+        },
+        "scope": {
+          "system_revision": "abc123",
+          "environment": "synthetic-ci",
+          "platform": null,
+          "provider": "synthetic-provider",
+          "tenant": null,
+          "workload": "unit-test",
+          "time_window": "2026-09-27T10:00:00Z",
+          "boundaries": [
+            "provider artifact only",
+            "no playback or user delivery evidence"
+          ]
+        },
+        "result": "PASS",
+        "provenance": {
+          "source_type": "SYNTHETIC_FIXTURE",
+          "source_locator": "fixture://SYN-EV-001",
+          "captured_at": "2026-09-27T10:01:00Z",
+          "integrity_status": "NOT_CHECKED",
+          "sha256": null,
+          "parent_record_ids": []
+        },
+        "artifact_refs": [
+          {
+            "locator": "fixture://raw-output-001",
+            "artifact_type": "synthetic-test-output",
+            "sha256": null
+          }
+        ],
+        "recorded_at": "2026-09-27T10:02:00Z",
+        "record_status": "ACTIVE",
+        "review": {
+          "review_status": "NOT_REVIEWED",
+          "reviewer_ids": []
+        },
+        "limitations": [
+          "Synthetic only; not project evidence"
+        ],
+        "remediation": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"TENTOR HOS V.2 Candidate Requirement Evidence Link v0.1",
+  "type":"object","additionalProperties":false,
+  "required":["link_id","requirement_id","criterion_id","evidence_refs","aggregation_result","lifecycle_transition","governance_decision_ref"],
+  "properties":{
+    "link_id":{"type":"string","pattern":"^REL-[0-9]{3,}$"},
+    "requirement_id":{"type":"string","pattern":"^CRQ-[0-9]{2}$"},
+    "criterion_id":{"type":"string","minLength":1},
+    "evidence_refs":{"type":"array","minItems":1,"items":{"type":"string","minLength":1}},
+    "aggregation_result":{"enum":["PASS","FAIL","BLOCKED","NOT_RUN","INCONCLUSIVE","UNSCOPED","INSUFFICIENT","CONFLICTED","INVALID","NOT_APPLICABLE","STALE_OR_MISMATCHED"]},
+    "lifecycle_transition":{"type":"object","additionalProperties":false,"required":["from","to"],"properties":{"from":{"type":"string","minLength":1},"to":{"type":"string","minLength":1}}},
+    "governance_decision_ref":{"type":"string","minLength":1},
+    "scope":{"type":"string","minLength":1},
+    "limitations":{"type":"array","items":{"type":"string"}}
+  }
+}
